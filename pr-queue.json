@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-rowbound-via-inert-content",
+  "branch": "refactor/deduplicate-tholrep-via-pfhrep",
   "base": "main",
-  "title": "refactor(Development/AutomorphicArithmetic/OrbitLabellings): reuse InertPrimeDepthContentBoundProof in RowBoundLeFnumSumAddError",
-  "body": "Reuse the already-public `GlobalTheory.GoodDepth.Plan`, `GlobalTheory.LevelsOrbits.thlEq`, `GlobalTheory.PlanValue.{rk_le, card_reps}`, and `GlobalTheory.InertContent.{orbit, mono_res\u03b9_var, sum_reps, inv_le}` from `InertPrimeDepthContentBoundProof.lean` inside `RowBoundLeFnumSumAddError.lean`, removing the duplicated private plan, flow, and orbit-bound machinery.\n\nRemoved private declarations in `UpperTheory.G2.RowPlan`:\n- `least_level_odd`, `card_reps`, `rk_le`\n\nRemoved private declarations in `UpperTheory.G2.RowBd`:\n- `Plan`, `Plan.bound`\n- `levels_nonempty`, `thlEq`, `levelBound`\n- `exists_good`, `succ_mul_flowVal_le`, `rho_mul_le_Fnum`, `Fnum_mul`, `blockBd_le`, `exists_plan`\n- `sum_reps`, `one_le_log`, `logb_le`, `mono_res\u03b9_var`, `add_le`, `inv_le`, `orbit`\n"
+  "title": "refactor(Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases): reuse PfHRep helpers in THolRep",
+  "body": "Reuse the already-public `UpperTheory.Esk.HeckeRepresentationSatake` lemmas from `PositivityTheory/AutomorphicForms/PublishedInputs/JacquetLanglands/TorusKernels/PfHRep.lean` (and `UpperTheory.Esk.isHolV_of`) inside `THolRep.lean`, removing 19 duplicated private declarations.\n\nRemoved private declarations in `THolRep.lean`:\n- `stable_iSup`, `proj`, `rt_lie`, `lie_eq_sum`, `rt_Eop`, `cap_act`, `cap_all`\n- `hecke_eq_dc`, `iwahori_level_zero_eq`, `hecke_Tj`, `sat_two`, `uop_map`, `fin_scalar`, `unit_det`\n- `expo_abs`, `sign_abs`\n- `rot`, `rot_add`, `sign_hol`\n"
 }
