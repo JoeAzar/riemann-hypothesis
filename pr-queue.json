@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-tcentchar-via-centchar",
+  "branch": "refactor/deduplicate-poscoreq-via-slices-finite-regularity",
   "base": "main",
-  "title": "refactor(Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases): delegate TCentChar to HermitianTwists.CentChar",
-  "body": "Delegate `UpperTheory.V.Sd.Wc.centChar_alt` in `DenseThresholdCases/TCentChar.lean` directly to `UpperTheory.V.Af.Rn.centChar` from `HermitianTwists/CentChar.lean` instead of duplicating the central-character proof, and remove the unused private imports.\n\nRemoves the private `UpperTheory.V.Sd.Wc.CentralCharacter` helpers (`orb`, `orb_comm`, `orb_act`, `annPart`, `exists_type`, `sc`, `corner_scalar`, `sc_comm`, `continuous_sc`, `cptPart`, `cpt_fin`, `schur`, `inf_sc`, `fin_sc`, `commute_rt`, `lie_sc_rt`, `lie_sc_act`, `Scal`, `Scal.mul`, `scal_fin`, `scal_sign`, `scal_exp`, `decomp`, `scal_all`, `continuous_pInf`, `main`) from `TCentChar.lean`.\n"
+  "title": "refactor(Formalism/HermitianCurvature/HermitianCurvatureProofs): share quantitative posCoreQ_of between SlicesFiniteRegularityBuilt and PosCoreQ",
+  "body": "Generalize `Formalism.FourierDecayAlt.P.JCTx6.Pos.posCore` in `SlicesFiniteRegularityBuilt.lean` to the quantitative theorem `posCoreQ_of`, derive `posCore` from it, and delegate `Formalism.FourierDecayAlt.P.PBE.posCoreQ` in `PosCoreQ.lean` directly to `posCoreQ_of` (removing the duplicated proof and unused private imports from `PosCoreQ.lean`).\n\nAdds `Formalism.FourierDecayAlt.P.JCTx6.Pos.posCoreQ_of` in `SlicesFiniteRegularityBuilt.lean`.\n"
 }
