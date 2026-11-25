@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-rest-geom",
+  "branch": "refactor/deduplicate-pchain-dn",
   "base": "main",
-  "title": "refactor(Formalism/SharpRestriction/GrowthBounds): share upper-bound restGeom proof between GeOldest and OneSidedLemma4Realisable",
-  "body": "Generalize `Formalism.MainNotions.G.symbolGeneratorData.restGeom` in `GeOldest.lean` to the upper-bound-only statement `Formalism.MainNotions.G.symbolGeneratorData.restGeom_of_le`, and delegate both `restGeom` and `Formalism.MainNotions.TestSideCounting.restGeomU` in `OneSidedLemma4Realisable.lean` to it.\n\nChanged declarations:\n- Added `Formalism.MainNotions.G.symbolGeneratorData.restGeom_of_le` in `GeOldest.lean`.\n- Delegated `Formalism.MainNotions.G.symbolGeneratorData.restGeom` in `GeOldest.lean` and `Formalism.MainNotions.TestSideCounting.restGeomU` in `OneSidedLemma4Realisable.lean` to `restGeom_of_le`.\n"
+  "title": "refactor(Formalism/SharpRestriction/LevelLetterCocycles): drop hK from pchain_DN and remove pchain_DN'",
+  "body": "Remove the unnecessary `K \u2264 X` hypothesis from `Formalism.MainNotions.N.Pv.LocalLengthBound.pchain_DN` in `PchainDNAlt.lean` by bounding the iterated quotient length via `Submodule.quotientQuotientEquivQuotientSup` and `Module.length_le_of_surjective`, delete the duplicated `pchain_DN'` in `LengthBoundOfHypotheses.lean`, and update its callers.\n\nChanged declarations:\n- Generalized `Formalism.MainNotions.N.Pv.LocalLengthBound.pchain_DN` in `PchainDNAlt.lean` by dropping the `hK` parameter.\n- Removed `Formalism.MainNotions.N.Pv.LocalLengthBound.pchain_DN'` in `LengthBoundOfHypotheses.lean` and updated its call site to `pchain_DN`.\n- Updated both calls to `pchain_DN` in `FrobeniusSqComparisonLetter.lean`.\n"
 }
