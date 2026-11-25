@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-eta-killsmu-via-quadmu",
+  "branch": "refactor/deduplicate-rowbound-via-inert-content",
   "base": "main",
-  "title": "refactor(Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups): reuse QuadMu.quadMu in eta_killsMu",
-  "body": "Delegate the quadratic-extension Galois-containment step of `UpperTheory.V.U3.eta_killsMu` in `SubSmulMulSubSmulEqZeroOfQuadratic.lean` to `UpperTheory.V.Sd.Tw.quadMu` from `IdeleGenerators/TorsionOrderFrobenius/QuadMu.lean`, eliminating the duplicated private discriminant and root-fixing lemmas.\n\nRemoved private declarations in `UpperTheory.V.U3.EtaMu`:\n- `Fx`\n- `fx_of`, `fx_mul`, `fx_one`, `fx_pow`, `fx_four`, `fix_dvd`, `fx_neg_one`, `fx_two`, `fx_odd`, `fx_disc`\n- `sub_smul_mul_sub_smul_eq_zero_of_quadratic`\n"
+  "title": "refactor(Development/AutomorphicArithmetic/OrbitLabellings): reuse InertPrimeDepthContentBoundProof in RowBoundLeFnumSumAddError",
+  "body": "Reuse the already-public `GlobalTheory.GoodDepth.Plan`, `GlobalTheory.LevelsOrbits.thlEq`, `GlobalTheory.PlanValue.{rk_le, card_reps}`, and `GlobalTheory.InertContent.{orbit, mono_res\u03b9_var, sum_reps, inv_le}` from `InertPrimeDepthContentBoundProof.lean` inside `RowBoundLeFnumSumAddError.lean`, removing the duplicated private plan, flow, and orbit-bound machinery.\n\nRemoved private declarations in `UpperTheory.G2.RowPlan`:\n- `least_level_odd`, `card_reps`, `rk_le`\n\nRemoved private declarations in `UpperTheory.G2.RowBd`:\n- `Plan`, `Plan.bound`\n- `levels_nonempty`, `thlEq`, `levelBound`\n- `exists_good`, `succ_mul_flowVal_le`, `rho_mul_le_Fnum`, `Fnum_mul`, `blockBd_le`, `exists_plan`\n- `sum_reps`, `one_le_log`, `logb_le`, `mono_res\u03b9_var`, `add_le`, `inv_le`, `orbit`\n"
 }
