@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-tholrep-via-pfhrep",
+  "branch": "refactor/deduplicate-marked-form-pieces-via-matching-pieces",
   "base": "main",
-  "title": "refactor(Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases): reuse PfHRep helpers in THolRep",
-  "body": "Reuse the already-public `UpperTheory.Esk.HeckeRepresentationSatake` lemmas from `PositivityTheory/AutomorphicForms/PublishedInputs/JacquetLanglands/TorusKernels/PfHRep.lean` (and `UpperTheory.Esk.isHolV_of`) inside `THolRep.lean`, removing 19 duplicated private declarations.\n\nRemoved private declarations in `THolRep.lean`:\n- `stable_iSup`, `proj`, `rt_lie`, `lie_eq_sum`, `rt_Eop`, `cap_act`, `cap_all`\n- `hecke_eq_dc`, `iwahori_level_zero_eq`, `hecke_Tj`, `sat_two`, `uop_map`, `fin_scalar`, `unit_det`\n- `expo_abs`, `sign_abs`\n- `rot`, `rot_add`, `sign_hol`\n"
+  "title": "refactor(Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition): delegate exists_pieces_match to ExistsMatchingPiecesOfCell",
+  "body": "Delegate `GlobalTheory.PolFan.OrbMark.exists_pieces_match` in `ExistsMarkedFormPiecesRaysOfSimplicialCells.lean` directly to `GlobalTheory.CompanionTheory.Ar.Fan.MatchingPieces.exists_pieces_match` in `CompanionTheory/SpectralGeometry/LocalGlobalProofs/ConvexCones/ExistsMatchingPiecesOfCell.lean` at `(\ud835\udcde E, H.bar, H.w0)`, removing the unused duplicated `Host`-specialized helpers.\n\nRemoved declarations in `ExistsMarkedFormPiecesRaysOfSimplicialCells.lean`:\n- `GlobalTheory.PolFan.OrbMark.exists_desc_rays_pullAdd`\n- `GlobalTheory.PolFan.OrbMark.inRCone_pullAdd_of_isCell`\n"
 }
