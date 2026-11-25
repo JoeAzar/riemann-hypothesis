@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-poscoreq-via-slices-finite-regularity",
+  "branch": "refactor/deduplicate-bftruedeg-ioBlock-wh",
   "base": "main",
-  "title": "refactor(Formalism/HermitianCurvature/HermitianCurvatureProofs): share quantitative posCoreQ_of between SlicesFiniteRegularityBuilt and PosCoreQ",
-  "body": "Generalize `Formalism.FourierDecayAlt.P.JCTx6.Pos.posCore` in `SlicesFiniteRegularityBuilt.lean` to the quantitative theorem `posCoreQ_of`, derive `posCore` from it, and delegate `Formalism.FourierDecayAlt.P.PBE.posCoreQ` in `PosCoreQ.lean` directly to `posCoreQ_of` (removing the duplicated proof and unused private imports from `PosCoreQ.lean`).\n\nAdds `Formalism.FourierDecayAlt.P.JCTx6.Pos.posCoreQ_of` in `SlicesFiniteRegularityBuilt.lean`.\n"
+  "title": "refactor(Formalism/SharpRestriction/GrowthBounds): generalize WeightWLet.ioBlock_wh and remove BFTrueDeg.ioBlock_wh'",
+  "body": "Generalize `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh` in `WeightWLet.lean` to take a balanced weighted-homogeneity hypothesis directly (dropping the unused `mm` parameter), remove the duplicated `ioBlock_wh'` theorem and unused private imports from `BFTrueDeg.lean`, and update the call sites in `BFTrueDeg.lean`, `SymbolFormOfOrthogonality.lean`, and `SymFamilyWordEqHeadMulMonomial.lean`.\n\nRemoves `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh'` from `BFTrueDeg.lean` and generalizes `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh` in `WeightWLet.lean`.\n"
 }
