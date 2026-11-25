@@ -87,6 +87,7 @@ noncomputable section
 namespace Formalism.FourierDecayAlt.P.ListSumSplittings
 
 open Formalism.REAL Formalism.QuantumDeterminants Formalism.FourierDecayAlt Formalism.FourierDecayAlt.B Formalism.FourierDecayAlt.P.B4 Formalism.FourierDecayAlt.P.Ux10 Formalism.FourierDecayAlt.P.SmoothnessOrderArithmetic Formalism.FourierDecayAlt.P.ListSumInequalities
+open Formalism.FourierDecayAlt.P.Ux1 (J Eb Mv_co Mv_sum co)
 
 attribute [local instance] Matrix.normedAddCommGroup Matrix.normedSpace
 
