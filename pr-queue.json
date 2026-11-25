@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-chow-form-birational",
+  "branch": "refactor/deduplicate-rest-geom",
   "base": "main",
-  "title": "refactor(GroundTheory/HeightsAndTheta/Heights): share Chow form birationality step between ChowFormBirational and ChowFormBirationalAlgClosed",
-  "body": "Share the partial-derivative birationality step between `ChowFormBirational.proof` and `ChowFormBirationalAlgClosed.proof` by extracting `GroundTheory.Heights\u2082.Heights.chowFormBirational_of_exists_pderiv_ne_zero` in `PChowFormBirational.lean` and moving `GroundTheory.Heights\u2082.Heights.not_dvd_pderiv_of_pderiv_ne_zero` there.\n\nChanged declarations:\n- Removed `GroundTheory.Heights\u2082.Heights.not_dvd_pderiv_of_degreeOf_pos` in `PChowFormBirational.lean`.\n- Moved `GroundTheory.Heights\u2082.Heights.not_dvd_pderiv_of_pderiv_ne_zero` from `PChowFormBirationalAlgClosed.lean` to `PChowFormBirational.lean`.\n- Added `GroundTheory.Heights\u2082.Heights.chowFormBirational_of_exists_pderiv_ne_zero` in `PChowFormBirational.lean` and delegated both `ChowFormBirational.proof` and `ChowFormBirationalAlgClosed.proof` to it.\n"
+  "title": "refactor(Formalism/SharpRestriction/GrowthBounds): share upper-bound restGeom proof between GeOldest and OneSidedLemma4Realisable",
+  "body": "Generalize `Formalism.MainNotions.G.symbolGeneratorData.restGeom` in `GeOldest.lean` to the upper-bound-only statement `Formalism.MainNotions.G.symbolGeneratorData.restGeom_of_le`, and delegate both `restGeom` and `Formalism.MainNotions.TestSideCounting.restGeomU` in `OneSidedLemma4Realisable.lean` to it.\n\nChanged declarations:\n- Added `Formalism.MainNotions.G.symbolGeneratorData.restGeom_of_le` in `GeOldest.lean`.\n- Delegated `Formalism.MainNotions.G.symbolGeneratorData.restGeom` in `GeOldest.lean` and `Formalism.MainNotions.TestSideCounting.restGeomU` in `OneSidedLemma4Realisable.lean` to `restGeom_of_le`.\n"
 }
