@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-nlnonnegfin-disc-local",
+  "branch": "refactor/deduplicate-cutjdhat-grpm-via-grpp",
   "base": "main",
-  "title": "refactor(ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/HeightTheory): reuse DiscLocal.disc_local in NlNonnegFin",
-  "body": "Reuse `ReciprocityTheory.ChartRestriction.G.T0.HDiscOmL.disc_local` from `DiscLocal.lean` (already publicly imported by `NlNonnegFin.lean`) in `Data.de_local` instead of duplicating the 109-line local `have disc_local` proof.\n"
+  "title": "refactor(Formalism/HermitianCurvature/HermitianCurvatureProofs): reuse CutJDHatJDCapRGrpP helpers in CutJDHatJDCapRGrpM",
+  "body": "Expose `isDom_OmP_levTower_base` and `wCell_last_mul_mem_Glev_zero` in `CutJDHatJDCapRGrpP.lean` and reuse them in `CutJDHatJDCapRGrpM.lean` (which already publicly imports `CutJDHatJDCapRGrpP`), removing the 110 lines of duplicated private helpers.\n\nExposes `Formalism.FourierDecayAlt.P.CutMP.isDom_OmP_levTower_base` and `Formalism.FourierDecayAlt.P.CutMP.wCell_last_mul_mem_Glev_zero` in `CutJDHatJDCapRGrpP.lean`, and removes the duplicate private declarations `isDom_OmP_levTower_base`, `w1_mem_UH_Hpk_of_ne_zero`, `mul_mem_UH_of_mem_of_mem`, `wCell_mem_UH_Hpk_of_ne_zero`, and `wCell_last_mul_mem_Glev_zero` from `CutJDHatJDCapRGrpM.lean`.\n"
 }
