@@ -1,0 +1,6 @@
+{
+  "branch": "refactor/deduplicate-tensFactor-eigenspace-bound",
+  "base": "main",
+  "title": "refactor(Development/AutomorphicArithmetic): deduplicate tensFactor_offRange and local-operator helpers",
+  "body": "Generalize `src/Development/AutomorphicArithmetic/Foundations/Convolution/IntegrableConvolution/TensFactorAlt.lean` to prove `UpperTheory.ConvolutionTheory.L1.tensFactor_offRange` (without assuming right-\u03c7-equivariance of the local test functions at the marked places) and derive `UpperTheory.ConvolutionTheory.L1.tensFactor` from it, exposing the remaining shared projection and local-operator helpers (`dep_extend`, `GA`, `list_prj`, `oloc_commute`, `oloc_absorb`) as `protected`.\n\nUpdate `src/Development/AutomorphicArithmetic/TwistedTraces/ExistsPosConstEigenspaceBoundOfSplitCMDatum.lean` to reuse `UpperTheory.ConvolutionTheory.L1.tensFactor_offRange` and those shared helpers, removing the duplicate `ExistsBoundDimSimultaneousLocalEigenspaceOfOpenC` clump member and duplicated local-operator/projection helpers.\n\nRemoves `UpperTheory.exists_bound_dim_simultaneousLocalEigenspace_of_openCompact` (its only caller was `UpperTheory.exists_pos_const_eigenspace_bound_of_split_CMDatum`, now proved directly via `UpperTheory.ConvolutionTheory.L1.tensFactor_offRange`)."
+}

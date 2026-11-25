@@ -1,0 +1,29 @@
+name: Open upstream PR
+
+on:
+  push:
+    branches: [pr-dispatch]
+    paths: [pr-queue.json]
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open upstream PR if not already open
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAM_PR_TOKEN }}
+        run: |
+          HEAD_BRANCH=$(jq -r '.branch' pr-queue.json)
+          if [ -z "$HEAD_BRANCH" ] || [ "$HEAD_BRANCH" = "null" ]; then
+            echo "No branch in pr-queue.json, skipping."
+            exit 0
+          fi
+
+          EXISTING=$(gh api "repos/leanprover-community/riemann-hypothesis/pulls?head=JoeAzar:${HEAD_BRANCH}&state=all" --jq 'length')
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "PR already exists for JoeAzar:${HEAD_BRANCH}, skipping."
+            exit 0
+          fi
+
+          jq '{title, body, base: (.base // "main"), head: ("JoeAzar:" + .branch)}' pr-queue.json             | gh api -X POST repos/leanprover-community/riemann-hypothesis/pulls --input -                 --jq '{number, html_url}'
