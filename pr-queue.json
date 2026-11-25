@@ -1,6 +1,6 @@
 {
-  "branch": "refactor/deduplicate-bftruedeg-ioBlock-wh",
+  "branch": "refactor/deduplicate-nlnonnegfin-disc-local",
   "base": "main",
-  "title": "refactor(Formalism/SharpRestriction/GrowthBounds): generalize WeightWLet.ioBlock_wh and remove BFTrueDeg.ioBlock_wh'",
-  "body": "Generalize `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh` in `WeightWLet.lean` to take a balanced weighted-homogeneity hypothesis directly (dropping the unused `mm` parameter), remove the duplicated `ioBlock_wh'` theorem and unused private imports from `BFTrueDeg.lean`, and update the call sites in `BFTrueDeg.lean`, `SymbolFormOfOrthogonality.lean`, and `SymFamilyWordEqHeadMulMonomial.lean`.\n\nRemoves `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh'` from `BFTrueDeg.lean` and generalizes `Formalism.MainNotions.ColumnSystems.Pf.ioBlock_wh` in `WeightWLet.lean`.\n"
+  "title": "refactor(ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/HeightTheory): reuse DiscLocal.disc_local in NlNonnegFin",
+  "body": "Reuse `ReciprocityTheory.ChartRestriction.G.T0.HDiscOmL.disc_local` from `DiscLocal.lean` (already publicly imported by `NlNonnegFin.lean`) in `Data.de_local` instead of duplicating the 109-line local `have disc_local` proof.\n"
 }
